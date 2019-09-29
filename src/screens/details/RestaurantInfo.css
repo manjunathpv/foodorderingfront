@@ -1,0 +1,30 @@
+@media screen and (max-width: 776px){
+    .mobile-center{
+        text-align: center;
+    }
+}
+
+.mlr60{
+    padding: 5px 60px;
+}
+
+.grid-container{
+    background-color: #dedede;
+    margin-top: 55px;
+}
+
+img{
+    padding: 10px;
+    height: 200px;
+    width: 250px;
+    margin-top: 15px;
+}
+
+.header-section{
+    padding-top: 35px;
+}
+
+.header-title{
+    font-weight: 400;
+    font-size: 22px;
+}
