@@ -54,28 +54,6 @@ class Home extends React.Component {
     this.props.history.push('/details');
   }
 
-  render(){
-    return(
-      <div style={{marginTop:100}}>
-        <Header
-          screen="Home"
-          searchHandler={this.searchHandler}/>
-        <div>
-          <GridList cellHeight={'auto'} cols={this.getGridListCols()}>
-            {this.state.filteredRestaurantList.map(item =>(
-              <GridListTile key={item.id}>
-                <HomeItem
-                  onItemClick={this.itemClickHandler}
-                  item={item}
-                />
-              </GridListTile>
-            ))}
-          </GridList>
-        </div>
-      </div>
-    );
-  }
-
   componentDidMount(){
     this.getAllRestaurantsApiCall();
   }
@@ -92,7 +70,7 @@ class Home extends React.Component {
     }).then((responseJson)=>{
       that.setState({
         restaurantList:responseJson,
-        filteredRestaurantList:responseJson
+        filteredRestaurantList:responseJson.restaurants
       });
     }).catch((error) => {
       console.log('error login data',error);
@@ -119,6 +97,28 @@ class Home extends React.Component {
     });
   }
 
+  render(){
+    return(
+      <div style={{marginTop:100}}>
+        <Header
+          screen="Home"
+          searchHandler={this.searchHandler}/>
+        <div>
+          <GridList cellHeight={'auto'} cols={this.getGridListCols()}>
+            {this.state.filteredRestaurantList.map(item =>(
+              <GridListTile key={item.id}>
+                <HomeItem
+                  onItemClick={this.itemClickHandler}
+                  item={item}
+                />
+              </GridListTile>
+            ))}
+          </GridList>
+        </div>
+      </div>
+    );
+  }
+
 }
 
 function HomeItem(props){
@@ -129,14 +129,14 @@ function HomeItem(props){
         <CardActionArea onClick={(e)=>props.onItemClick(item.id)}>
           <CardMedia
             component="img"
-            alt={item.restaurantName}
+            alt={item.restaurant_name}
             style={{objectFit: 'cover'}}
             height="140"
-            image={item.photoUrl}
-            title={item.restaurantName}/>
+            image={item.photo_URL}
+            title={item.restaurant_name}/>
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {item.restaurantName}
+              {item.restaurant_name}
             </Typography>
             <Typography component="p">
               {item.categories}
@@ -144,11 +144,11 @@ function HomeItem(props){
             <div style={{marginTop:25,display:'flex',justifyContent:'space-between',alignItems:'center'}}>
               <div style={{display:'flex',flexDirection:'row',backgroundColor:"#FDD835",padding:5,justifyContent:'space-evenly',alignItems:'center',width:80}}>
                 <FontAwesomeIcon icon="star" color="white"/>
-                <span className="white">{item.userRating}({item.numberUsersRated})</span>
+                <span className="white">{item.customer_rating}({item.number_customers_rated})</span>
               </div>
               <div>
                 <FontAwesomeIcon size="sm" icon="rupee-sign" color="black"/>
-                <span>{item.avgPrice} for two</span>
+                <span>{item.average_price} for two</span>
               </div>
             </div>
           </CardContent>
