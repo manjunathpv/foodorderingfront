@@ -1,0 +1,77 @@
+.card-container {
+    /* max-width: max-content; */
+    margin-left: 60px;
+    margin-top: 20px;
+    width: 500px;
+}
+
+@media screen and (max-width: 776px) {
+    .mobile-center {
+        margin: 20px 30px 20px 50px;
+        width: auto;
+    }
+
+    .mobile-left {
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+.category-list {
+    padding: 20px 32px 0px 35px;
+}
+
+.category-name {
+    font-size: 10px;
+}
+
+.veg {
+    color: green;
+}
+
+.non-veg {
+    color: red;
+}
+
+.total-amount {
+    font-weight: bold;
+    font-size: small;
+    padding: 12px 12px 12px 0px;
+}
+
+.cart-text {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.cart-vegnonvegicon {
+    padding: 12px 12px 12px 0;
+}
+
+.cart-itemprice {
+    font-weight: lighter;
+    display: flex;
+    justify-content: flex-end;
+    padding: 12px;
+}
+
+.align-center {
+    display: flex;
+    align-items: center;
+}
+
+.btn-container {
+    padding: 16px;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    display: block;
+    text-align: center;
+}
+
+.btn-hoverfocus:hover,
+.btn-hoverfocus:focus {
+    background-color: yellow !important;
+    padding: 12px;
+}
