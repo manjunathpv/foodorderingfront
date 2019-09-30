@@ -12,3 +12,59 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.mtb10{
+  margin: 10px 0;
+}
+
+.mt10{
+  margin-top: 10px;
+}
+
+.pl10{
+  padding-left: 10px;
+}
+
+.pl5{
+  padding-left: 5px;
+}
+
+.pt10{
+  padding-top: 10px;
+}
+
+.pb15{
+  padding-bottom: 15px;
+}
+
+.pr50{
+  padding-right: 50px;
+}
+
+.ml20{
+  margin-left: 20px;
+}
+
+.ml5{
+  margin-left: 5px;
+}
+
+.mb15{
+  margin-bottom: 15px;
+}
+
+.mt15{
+  margin-top: 15px;
+}
+
+.mr5{
+  margin-right: 5px;
+}
+
+.p12{
+  padding: 12px;
+}
+
+.float-right{
+  float: right;
+}
