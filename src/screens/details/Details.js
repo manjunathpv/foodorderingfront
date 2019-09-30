@@ -83,13 +83,11 @@ componentWillMount() {
             }
         })
         .then(data => {
-            console.log(data);
             let categories = this.getUnique(data.categories, 'id');
             for (let index = 0; index < categories.length; index++) {
                 let item_list = this.getUnique(categories[index].item_list, 'id');
                 categories[index]['item_list'] = item_list;
             }
-            console.log(categories);
             this.setState({ restaurantInfo: data, address: data.address, categories: categories, locality: data.address.locality.toUpperCase() })
         })
         .catch(error => console.log('error login data', error));
