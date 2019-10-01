@@ -43,7 +43,6 @@ class Details extends Component {
     constructor() {
         super();
         this.state = {
-            restaurantId: '1dd86f90-a296-11e8-9a3a-720006ceb890',
             address: {},
             restaurantInfo: {},
             categories: [],
@@ -73,7 +72,7 @@ class Details extends Component {
 
 componentWillMount() {
     let that = this;
-    let url = `http://localhost:8080/api/restaurant/${this.state.restaurantId}`;
+    let url = `http://localhost:8080/api/restaurant/${this.props.match.params.id}`;
     return fetch(url, { method: 'GET' })
         .then((response) => {
             if (response.ok) {
