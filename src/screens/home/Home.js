@@ -47,11 +47,8 @@ class Home extends React.Component {
     }
   }
 
-  itemClickHandler= (id)=>{
-    console.log('id',id);
-    // sessionStorage.setItem('currentRest',id);
-    this.props.setRestaurantId(id);
-    this.props.history.push('/details');
+  itemClickHandler= id => {
+    this.props.history.push('/restaurant/' + id);
   }
 
   componentDidMount(){
